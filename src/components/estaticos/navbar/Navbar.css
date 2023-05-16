@@ -1,3 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Roboto:wght@100;500&display=swap');
 
+.cursor{
+    cursor: poiter;
+    color:white
+}
+
+.text-decorator-none{
+    text-decoration: none;
+    color: white;
+}
 
