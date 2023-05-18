@@ -9,43 +9,43 @@ function Navbar() {
         <>
             <AppBar position='static' style={{ backgroundColor:"#739682" }}>
                 <Toolbar variant='dense'>
-                    <Box style={{ cursor: "pointer"}}>
-                        <Typography variant='h5' style={{ color:"black" }}>
+                    <Box className='cursor'>
+                        <Typography variant='h5'>
                             Blog Pessoal
                         </Typography>
                     </Box>
 
                     <Box display="flex" justifyContent="start">
                         <Link to='/home'className='text-decorator-none'>
-                            <Box mx={1} style={{ cursor: "pointer" }}>
-                                <Typography variant='h6' style={{ color:"black"}}>
+                            <Box mx={1}  className='cursor'>
+                                <Typography variant='h6'>
                                     Home
                                 </Typography>
                             </Box>
                         </Link>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                        <Typography variant='h6' style={{ color:"black"}}>
+                        <Box mx={1} className='cursor'>
+                        <Typography variant='h6'>
                           Criar Postagem
                         </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                        <Typography variant='h6' style={{ color:"black"}}>
+                        <Box mx={1} className='cursor'>
+                        <Typography variant='h6' >
                            Postagem
                         </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                        <Typography variant='h6' style={{ color:"black"}}>
+                        <Box mx={1}  className='cursor'>
+                        <Typography variant='h6' >
                             Temas
                         </Typography>
                         </Box>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                        <Typography variant='h6' style={{ color:"black"}}>
+                        <Box mx={1}  className='cursor'>
+                        <Typography variant='h6'>
                             Cadastrar Temas
                         </Typography>
                         </Box>
                         <Link to='/login' className='text-decorator-none'>
-                        <Box mx={1} style={{ cursor: "pointer" }}>
-                        <Typography variant='h6' style={{ color:"black"}}>
+                        <Box mx={1}  className='cursor'>
+                        <Typography variant='h6'>
                             Logout
                         </Typography>
                         </Box>

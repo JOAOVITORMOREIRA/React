@@ -8,21 +8,21 @@ import { Box } from '@mui/material'
 function Footer(){
     return(
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center">
+           <Grid container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={12}>
-                <Box style={{ backgroundColor: "#8baf9a", height:"110px" }}>
+                    <Box style={{ backgroundColor: "#3F51B5", height: "120px" }}>
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                            <Typography variant="h5" align="center" gutterBottom style={{ color: "black" }}>Siga-nos nas redes sociais</Typography>
+                            <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>Siga-nos nas redes sociais </Typography>
                         </Box>
                         <Box display="flex" alignItems="center" justifyContent="center">
                             <a href="https://www.instagram.com/joao.vitor.moreira93/" target="_blank">
-                                <InstagramIcon style={{ fontSize: 60, color: "black" }} />
+                                <InstagramIcon style={{ fontSize: 60, color: "white" }} />
                             </a>
                             <a href="https://www.linkedin.com/in/moreira-joao-vitor/" target="_blank">
-                                <LinkedInIcon style={{ fontSize: 60, color: "black" }} />
+                                <LinkedInIcon style={{ fontSize: 60, color: "white" }} />
                             </a>
                             <a href="https://github.com/JOAOVITORMOREIRA/" target="_blank">
-                                <GitHubIcon style={{ fontSize: 60, color: "black" }} />
+                                <GitHubIcon style={{ fontSize: 60, color: "white" }} />
                             </a>
                         </Box>
                     </Box>
