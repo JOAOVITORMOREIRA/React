@@ -3,11 +3,12 @@ import { Button, Grid, Typography } from '@material-ui/core'
 import { Box } from '@mui/material'
 import './Home.css'
 import Carrossel from "../../components/carrossel/Carrossel";
+import TabPostagem from "../../components/postagens/tabPostagem/TabPostagem";
 
 function Home() {
     return (
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#3F51B5" }}>
+            <Grid container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#404040" }}>
                 <Grid alignItems="center" item xs={6}>
                     <Box paddingX={20} >
                         <Typography variant="h4" gutterBottom color="textPrimary" component="h4" align="center" style={{ color: "white", fontWeight: "bold" }}>Seja bem vindo(a)!</Typography>
@@ -16,7 +17,7 @@ function Home() {
                     <Box display="flex" justifyContent="center">
                         <Box marginRight={1}>
                         </Box>
-                        <Button variant="outlined" style={{ borderColor: "white", backgroundColor: "#3F51B5", color: "white" }}>Ver Postagens</Button>
+                        <Button variant="outlined" style={{ borderColor: "white", backgroundColor: "#b70000", color: "white"}}>Ver Postagens</Button>
                     </Box>
                 </Grid>
                 <Grid item xs={6} >
@@ -27,7 +28,8 @@ function Home() {
             </Grid>
 
             <Grid container style={{ marginTop: "8px" }}>
-                <Grid item xs={12}>
+                <Grid item xs={12} className='postagens'>
+                    <TabPostagem />
                     <Carrossel />
                 </Grid>
             </Grid>
