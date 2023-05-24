@@ -39,8 +39,8 @@ function ListaPostagem() {
       {
         posts.map(post => (
           <Box m={2} >
-            <Card variant="outlined">
-              <CardContent>
+            <Card variant="outlined" style={{ backgroundColor: "#404040" }}> {/*teste de cor*/}
+              <CardContent >
                 <Typography color="textSecondary" gutterBottom>
                   Postagens
                 </Typography>

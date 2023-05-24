@@ -40,13 +40,13 @@ function Home() {
                 <Grid item xs={6} >
                     <img src="https://i.imgur.com/H88yIo2.png" alt="" width="500px" height="500px" />
                 </Grid>
-                <Grid xs={12} style={{ backgroundColor: "white" }}>
+                <Grid xs={12} style={{ backgroundColor: "white" }} className='postagens'>
+                <TabPostagem />
                 </Grid>
             </Grid>
 
-            <Grid container style={{ marginTop: "8px" }}>
-                <Grid item xs={12} className='postagens'>
-                    <TabPostagem />
+            <Grid container style={{ marginTop: "0px" }}>
+                <Grid item xs={12} >
                     <Carrossel />
                 </Grid>
             </Grid>
