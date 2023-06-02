@@ -1,16 +1,43 @@
 .textoLogar{
     font-weight: bold !important;
  }
- 
-.imagemLogin{
-     background-image: url(https://i.imgur.com/d5bMdDJ.jpg);
-     background-repeat: no-repeat;
-     width: 100vh;
-     min-height: 100vh;
-     background-size: cover;
-     background-position: center;
- }
+
  
  .text-decorator-none{
      text-decoration: none;
  }
+
+ .login-container {
+  height: 100vh;
+  background-image: url('https://imgur.com/VEYau0Z.png'); /* Substitua "caminho/para/imagem" pelo caminho para a imagem de fundo desejada */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-container {
+  background-color: rgba(255, 255, 255, 0.27);
+  padding: 20px;
+  max-width: 400px;
+  margin: auto;
+  
+}
+
+
+.textoLogar {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.cadastroUser {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .login-form {
+    width: 90%;
+  }
+}

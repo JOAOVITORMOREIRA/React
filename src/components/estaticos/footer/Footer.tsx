@@ -4,10 +4,22 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import { Box } from '@mui/material'
+import { useDispatch, useSelector } from "react-redux";
+import { UserState } from "../../../store/token/Reducer";
 
 function Footer(){
-    return(
-        <>
+
+    const dispatch = useDispatch();
+
+    const token = useSelector<UserState, UserState["tokens"]>(
+        (state) => state.tokens
+      )
+
+    var footerComponent;
+
+    if(token !== ''){
+        footerComponent =
+   
            <Grid container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={12}>
                     <Box style={{ backgroundColor: "#202020", height: "120px" }}>
@@ -38,6 +50,11 @@ function Footer(){
                         </Box>
                 </Grid>
             </Grid>
+    }
+    
+    return(
+        <> 
+            {footerComponent}   
         </>
     )
 }

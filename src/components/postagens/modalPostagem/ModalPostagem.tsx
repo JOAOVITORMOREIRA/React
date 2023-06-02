@@ -31,7 +31,7 @@ function getModalStyle() {
     }),
   );
   
-  function ModalPostagem () {
+function ModalPostagem () {
     const classes = useStyles();
     const [modalStyle] = React.useState(getModalStyle);
     const [open, setOpen] = React.useState(false);
@@ -73,4 +73,4 @@ function getModalStyle() {
       </div>
     );
   }
-  export default ModalPostagem
+export default ModalPostagem

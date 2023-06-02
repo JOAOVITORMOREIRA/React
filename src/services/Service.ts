@@ -1,8 +1,11 @@
 import axios from "axios";
 
 export const api =axios.create({
-    baseURL: 'https://blogpessoal-t0lk.onrender.com'
+    // baseURL: 'https://blogpessoal-t0lk.onrender.com',
+    //  baseURL: 'http://localhost:8080/'
+    baseURL: import.meta.env.VITE_API_URL,
 })
+
 
 export const login = async(url:any, dados:any, setDado:any) =>{
     const resposta = await api .post(url, dados)
