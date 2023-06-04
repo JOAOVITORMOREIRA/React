@@ -12,11 +12,11 @@ import User from '../../../models/User';
 import { addToken } from '../../../store/token/Actions';
 
 
-function CadastroPostagem() {
+function CadastroPost() {
     let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
-
+    
     const dispatch = useDispatch()
 
     const token = useSelector<UserState, UserState["tokens"]>(
@@ -31,7 +31,7 @@ function CadastroPostagem() {
         if (token == "") {
             toast.error('Você precisa estar logado', {
                 position: "top-right",
-                autoClose: 2000,
+                autoClose: 3500,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: false,
@@ -50,14 +50,6 @@ function CadastroPostagem() {
             descricao: ''
         })
 
-    const [user, setUser] = useState<User>({
-        id: + userId,
-        nome: '',
-        usuario: '',
-        senha: '',
-        foto: ''
-    })
-
     const [postagem, setPostagem] = useState<Postagem>({
         id: 0,
         titulo: '',
@@ -71,7 +63,6 @@ function CadastroPostagem() {
         setPostagem({
             ...postagem,
             tema: tema,
-            usuario: user,
         })
     }, [tema])
 
@@ -184,45 +175,47 @@ function CadastroPostagem() {
                 }
             }
         }
+        back()
 
-            back()
-
-        }
-
-        function back() {
-            navigate('/postagens')
-        }
-
-        return (
-            <Container maxWidth="sm" className="topo">
-                <form onSubmit={onSubmit}>
-                    <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
-                    <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
-                    <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
-
-                    <FormControl >
-                        <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
-                        <Select
-                            labelId="demo-simple-select-helper-label"
-                            id="demo-simple-select-helper"
-                            onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
-                                headers: {
-                                    'Authorization': token
-                                }
-                            })}>
-                            {
-                                temas.map(tema => (
-                                    <MenuItem value={tema.id}>{tema.descricao}</MenuItem>
-                                ))
-                            }
-                        </Select>
-                        <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-                        <Button type="submit" variant="contained" color="primary">
-                            Finalizar
-                        </Button>
-                    </FormControl>
-                </form>
-            </Container>
-        )
     }
-    export default CadastroPostagem;
+
+    function back() {
+        navigate('/postagens')
+    }
+
+    return (
+        <Container maxWidth="sm" className="topo">
+            <form onSubmit={onSubmit}>
+                <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro postagem</Typography>
+                <TextField value={postagem.titulo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="titulo" label="titulo" variant="outlined" name="titulo" margin="normal" fullWidth />
+                <TextField value={postagem.texto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)} id="texto" label="texto" name="texto" variant="outlined" margin="normal" fullWidth />
+
+                <FormControl >
+                    <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+                    <Select
+                        labelId="demo-simple-select-helper-label"
+                        id="demo-simple-select-helper"
+                        onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
+                            headers: {
+                                'Authorization': token
+                            }
+                        })}
+                    >
+                        {
+                            temas.map(tema => (
+                                <MenuItem value={tema.id} >{tema.descricao}</MenuItem>
+                            ))
+                        }
+                    </Select>
+                    <FormHelperText>Escolha um tema para a postagem</FormHelperText>
+                    <Button type="submit" variant="contained" color="primary"
+                        disabled={postagem.titulo.length == 0 || postagem.texto.length == 0 || postagem.tema?.id == 0}
+                    >
+                        {postagem.id ? 'Atualizar' : 'Cadastrar'}
+                    </Button>
+                </FormControl>
+            </form>
+        </Container>
+    )
+}
+export default CadastroPost;

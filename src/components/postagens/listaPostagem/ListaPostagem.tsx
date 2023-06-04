@@ -11,7 +11,7 @@ import { toast } from 'react-toastify';
 import { addToken } from '../../../store/token/Actions';
 
 function ListaPostagem() {
-  const [posts, setPostagens] = useState<Postagem[]>([])
+  const [postagens, setPostagens] = useState<Postagem[]>([])
 
   const dispatch = useDispatch()
 
@@ -52,12 +52,12 @@ function ListaPostagem() {
 
   useEffect(() => {
     getPost()
-  }, [posts.length])
+  }, [postagens.length])
 
   return (
     <>
-      {posts.length === 0 ? (<div className="spinner"></div>) : (
-        posts.map((post) => (
+      {postagens.length === 0 ? (<div className="spinner"></div>) : (
+        postagens.map((post) => (
           <Grid container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#404040" }}>
           <Box marginX={20} m={2} className="boxPost" >
             <Card variant="outlined" style={{ backgroundColor: "white" }}>
